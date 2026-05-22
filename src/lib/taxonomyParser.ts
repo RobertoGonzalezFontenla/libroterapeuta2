@@ -1,5 +1,5 @@
 ---
-import { getSinglePage } from "@/lib/contentParser.astro";
+import { getSinglePage } from "@/lib/contentParser";
 import { slugify } from "@/lib/utils/textConverter";
 
 // get taxonomy from frontmatter
