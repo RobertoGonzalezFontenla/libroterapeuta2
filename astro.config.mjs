@@ -54,6 +54,7 @@ export default defineConfig({
   image: { service: sharpImageService() },
   vite: { plugins: [tailwindcss()] },
   fonts: fontsConfig,
+  output: "server",   // ← añade esto
 
   integrations: [
     react(),
