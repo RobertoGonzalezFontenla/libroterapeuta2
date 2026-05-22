@@ -11,10 +11,12 @@
     "format": "prettier -w .",
     "check": "astro check",
     "deploy:cf-workers": "npm run build && wrangler deploy",
-    "preview:cf-workers": "npm run build && wrangler dev"
+    "preview:cf-workers": "npm run build && wrangler dev",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "0.9.8",
+    "@astrojs/cloudflare": "^13.5.4",
     "@astrojs/mdx": "5.0.4",
     "@astrojs/react": "5.0.4",
     "@astrojs/sitemap": "3.7.2",
@@ -43,6 +45,9 @@
     "sharp": "0.34.5",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3",
-    "wrangler": "^4.84.1"
+    "wrangler": "^4.94.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }

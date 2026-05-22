@@ -8,6 +8,8 @@ import { defineConfig, fontProviders, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // Helper to parse font string format: "FontName:wght@400;500;600;700"
 function parseFontString(fontStr) {
   const [name, weightPart] = fontStr.split(":");
@@ -52,6 +54,7 @@ export default defineConfig({
   image: { service: sharpImageService() },
   vite: { plugins: [tailwindcss()] },
   fonts: fontsConfig,
+
   integrations: [
     react(),
     sitemap(),
@@ -73,7 +76,10 @@ export default defineConfig({
       devMode: true,
     }),
   ],
+
   markdown: {
     shikiConfig: { theme: "one-dark-pro", wrap: true },
   },
+
+  adapter: cloudflare()
 });
