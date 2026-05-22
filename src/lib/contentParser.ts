@@ -1,4 +1,3 @@
----
 // src/lib/contentParser.ts
 import { getCollection, type CollectionKey, type CollectionEntry } from "astro:content";
 
@@ -18,4 +17,4 @@ export const getSinglePage = async <C extends CollectionKey>(
     return pageData.draft !== true;
   });
 };
----
+

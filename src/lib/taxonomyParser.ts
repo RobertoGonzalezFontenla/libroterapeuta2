@@ -1,4 +1,3 @@
----
 import { getSinglePage } from "@/lib/contentParser";
 import { slugify } from "@/lib/utils/textConverter";
 
@@ -30,4 +29,4 @@ export const getAllTaxonomy = async (collection: any, name: string) => {
   }
   return taxonomies;
 };
----
+
