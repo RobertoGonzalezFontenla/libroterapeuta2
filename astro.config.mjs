@@ -75,7 +75,7 @@ export default defineConfig({
   },
 
   adapter: cloudflare({
-    imageService: "passthrough",      // ← evita el binding ASSETS reservado
+     image: { service: { entrypoint: "astro/assets/services/noop" } },
     platformProxy: { enabled: false },
   }),
 });
