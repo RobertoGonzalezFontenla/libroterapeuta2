@@ -4,10 +4,9 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import AutoImport from "astro-auto-import";
 import gtm from "astro-gtm-lite";
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, fontProviders, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
-import cloudflare from "@astrojs/cloudflare";
 
 function parseFontString(fontStr) {
   const [name, weightPart] = fontStr.split(":");
@@ -40,10 +39,10 @@ export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
-  image: { service: { entrypoint: "astro/assets/services/noop" } },
+  image: { service: sharpImageService() },
   vite: { plugins: [tailwindcss()] },
   fonts: fontsConfig,
-  output: "server",
+  output: "static",
 
   integrations: [
     react(),
@@ -70,9 +69,4 @@ export default defineConfig({
   markdown: {
     shikiConfig: { theme: "one-dark-pro", wrap: true },
   },
-
-  adapter: cloudflare({
-    imageService: "passthrough",
-    platformProxy: { enabled: false },
-  }),
 });
