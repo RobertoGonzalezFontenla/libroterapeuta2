@@ -7,8 +7,6 @@
   "name": "libroterapeuta",
   "pages_build_output_dir": "./dist/client",
   "compatibility_date": "2026-03-01",
-  "assets": {
-    "directory": "./dist",
-    "not_found_handling": "404-page"
+     "not_found_handling": "404-page"
   }
 }
