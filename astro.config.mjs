@@ -73,8 +73,9 @@ markdown: {
     shikiConfig: { theme: "one-dark-pro", wrap: true },
   },
 
-  adapter: cloudflare({
-    imageService: "passthrough",       // ← solo esto en el adapter
-    platformProxy: { enabled: false },
-  }),
-});
+  
+ adapter: cloudflare({
+  imageService: "passthrough",
+  platformProxy: { enabled: false },
+  cloudflareModules: false,
+}),
