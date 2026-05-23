@@ -40,13 +40,13 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
   });
 
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
+ site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
-  image: { service: "passthrough" },  // ← sin sharp, compatible con Cloudflare
+  image: { service: { entrypoint: "astro/assets/services/noop" } },  // ← aquí, correcto
   vite: { plugins: [tailwindcss()] },
   fonts: fontsConfig,
-  output: "server",                   // ← server, no static (requerido por el adapter)
+  output: "server",                 
 
   integrations: [
     react(),
@@ -69,13 +69,12 @@ export default defineConfig({
       devMode: true,
     }),
   ],
-
-  markdown: {
+markdown: {
     shikiConfig: { theme: "one-dark-pro", wrap: true },
   },
 
   adapter: cloudflare({
-     image: { service: { entrypoint: "astro/assets/services/noop" } },
+    imageService: "passthrough",       // ← solo esto en el adapter
     platformProxy: { enabled: false },
   }),
 });
