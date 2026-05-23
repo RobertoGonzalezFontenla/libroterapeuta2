@@ -9,7 +9,6 @@ import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
 import cloudflare from "@astrojs/cloudflare";
 
-// Helper to parse font string format: "FontName:wght@400;500;600;700"
 function parseFontString(fontStr) {
   const [name, weightPart] = fontStr.split(":");
   let weights = [400];
@@ -19,16 +18,14 @@ function parseFontString(fontStr) {
       weights = weightMatch[1].split(";").map((w) => parseInt(w, 10));
     }
   }
-  const cleanName = name.replace(/\+/g, " ");
-  return { name, weights };
+  return { name: name.replace(/\+/g, " "), weights };
 }
 
 const fontsConfig = Object.entries(theme.fonts.font_family)
   .filter(([key]) => !key.includes("_type"))
   .map(([key, fontStr]) => {
     const { name, weights } = parseFontString(fontStr);
-    const typeKey = `${key}_type`;
-    const fallback = theme.fonts.font_family[typeKey] || "sans-serif";
+    const fallback = theme.fonts.font_family[`${key}_type`] || "sans-serif";
     return {
       name,
       cssVariable: `--font-${key}`,
@@ -40,13 +37,13 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
   });
 
 export default defineConfig({
- site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
+  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
-  image: { service: { entrypoint: "astro/assets/services/noop" } },  // ← aquí, correcto
+  image: { service: { entrypoint: "astro/assets/services/noop" } },
   vite: { plugins: [tailwindcss()] },
   fonts: fontsConfig,
-  output: "server",                 
+  output: "server",
 
   integrations: [
     react(),
@@ -69,13 +66,13 @@ export default defineConfig({
       devMode: true,
     }),
   ],
-markdown: {
+
+  markdown: {
     shikiConfig: { theme: "one-dark-pro", wrap: true },
   },
 
-  
- adapter: cloudflare({
-  imageService: "passthrough",
-  platformProxy: { enabled: false },
-  cloudflareModules: false,
-}),
+  adapter: cloudflare({
+    imageService: "passthrough",
+    platformProxy: { enabled: false },
+  }),
+});
