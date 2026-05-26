@@ -1,5 +1,15 @@
 {
   "main": [
-
+   
+    {
+      "name": "linkedin",
+      "icon": "FaLinkedin",
+      "link": "https://www.linkedin.com/"
+    },
+    {
+      "name": "YouTube",
+      "icon": "FaYoutube",
+      "link": "https://www.youtube.com/"
+    }
   ]
 }

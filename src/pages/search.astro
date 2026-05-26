@@ -1,7 +1,7 @@
 ---
 import SearchBar from "@/helpers/SearchBar";
 import Base from "@/layouts/Base.astro";
-import { getSinglePage } from "@/lib/contentParser";
+import { getSinglePage } from "@/lib/contentParser.astro";
 
 // Retrieve all articles
 const posts = await getSinglePage("posts");
