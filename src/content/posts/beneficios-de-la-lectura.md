@@ -4,7 +4,7 @@ slug: "beneficios-de-la-lectura"
 meta_title: "Beneficios de la lectura"
 description: "Beneficios de la lectura"
 date: 2026-05-23
-image: "/images/posts/beneficios-de-la-lectura.png"
+image: "/images/posts/Libroterapeuta-recomendacion-Oxford1.webp"
 categories: ["libros"]
 authors: ["Roberto González Fontenla"]
 tags: ["lectura", "hábitos", "aprendizaje", "conocimiento", "cerebro"]
