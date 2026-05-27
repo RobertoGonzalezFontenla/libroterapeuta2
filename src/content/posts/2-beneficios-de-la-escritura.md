@@ -1,5 +1,5 @@
 ---
-title: "Guía Leuchtturm1917: Bullet Journal, Ex Libris, Some Lines a Day y Change Journal"
+title: "#2 Beneficios de la escritura en papel"
 date: "2026-05-26"
 category: "Productividad"
 tags: ["Papelería", "Organización", "Bullet Journal", "Leuchtturm1917"]
