@@ -4,7 +4,7 @@ slug: "beneficios-de-la-escritura-en-papel"
 meta_title: "Beneficios de la escritura en papel"
 description: "Escribir en papel es mejor que teclear"
 date: 2026-05-23
-image: "/images/posts/1-beneficios-lectura/libroterapeuta-mas-libros-menos-pantallas-mejor.webp"
+image: "/images/posts/2-beneficios-escritura/some-lines-a-day-bullet-journal-ex-libris-change-journal-Leuchtturm1917.jpg"
 categories: ["libros"]
 authors: ["Roberto González Fontenla"]
 tags: ["lectura", "hábitos", "aprendizaje", "conocimiento", "cerebro"]
